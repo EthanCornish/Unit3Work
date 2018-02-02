@@ -28,7 +28,6 @@ if m < 3:
 
 # Formula
 h = int((q+((13*(n+1))//5)+k+(k//4)+(j//4)-(2*j))%7)
-print(h)
 
 # Takes output from formula to print a day of the week.
 if h == 0:
