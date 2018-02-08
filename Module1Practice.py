@@ -32,7 +32,7 @@ except ValueError:
     print('You did not enter a correct value. Please enter either a whole number or a decimal with no characters.')
     time = float(input('How many hours has it been since you started drinking?'))
 
-# Receive input for the amound of drinks and if getting a ValueError ask again
+# Receive input for the amount of drinks and if getting a ValueError ask again
 try:
     drinks = float(input('How many standard drinks have you consumed?'))
 except ValueError:
