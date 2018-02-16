@@ -1,3 +1,15 @@
+# exit(1) = invalid input
+
+
+# Function for calculating BAC
+def calcBAC(A, r, W, time):
+    # To stop an algorithmic error
+    A = float(A)
+    r = float(r)
+    W = float(W)
+    t = float(time)
+    ans = (A/(r*W))*100 -(0.00015*t)
+    return ans
 
 print('This program will calculate your approximate BAC level.\nNote: This is an approximate and not 100% accurate.')
 
@@ -6,8 +18,8 @@ print('This program will calculate your approximate BAC level.\nNote: This is an
 correct = 'no'      # Create a variable to check if the input is correct
 # Receive input for the gender, repeatedly ask until getting desirable input
 while correct == 'no':
-    gender = input('What is your gender, M = Male or W = Woman.')
-    if gender == 'M' or gender == 'W':
+    gender = input('What is your gender, M = Male or F = Female.')
+    if gender == 'M' or gender == 'F':
         correct = 'yes'
 correct = 'no'
 
@@ -49,19 +61,25 @@ while correct == 'no':
 # Convert the given mass to W for formula applying specified manipulations
 if unit == 'Metric':
     W = mass * 1000
-else:
+elif unit == 'Imperial':
     W = mass * 453.592
+else:
+    print('You did not give correct input')
+    exit(1)
 
 if gender == 'M':
     r = 0.68
-else:
+elif gender == 'F':
     r = 0.55
+else:
+    print('You did not give correct input')
+    exit(1)
+
 # Set variable A as specified
 A = drinks * 10
 
 # Calculate BAC according to given formula
-BAC = (A/(r*W))*100-(0.00015*time)
-# Print BAC for testing
+BAC = calcBAC(A, r, W, time)
 print('BAC = {0:.2f}'.format(BAC))
 
 print('\n\n')       # Print 2 New Lines for output neatness
@@ -78,7 +96,7 @@ if status == 'L' or status == 'P':
 if status == 'FL':
     # Check if BAC is greater than 0.7, between 0.5 and 0.7 or less than 0.5 and give correct output according to -
     # Module instructions
-    if BAC > 0.7:
+    if BAC > 0.07:
         print('Your BAC is greater than 0.7.\nLicense Cancelled, Interlock Device Installed.')
     elif 0.05 < BAC < 0.07:
         print('Your BAC is between 0.05 and 0.07.\nFine and 10 Demerit Points.')
