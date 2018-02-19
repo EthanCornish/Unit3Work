@@ -1,0 +1,16 @@
+
+A set of instructions turned into a word
+
+
+def function (arg1, arg2)       # arguemnet = arg
+    ans = arg1 + arg2           Variables inside the function exist only in the function
+    print(ans)
+return
+
+x = function(3,5)       #   3 = arg1    4 = arg2
+print(x)                #   output = 8
+print(ans)              #   output error
+
+
+
+When calling functions enter the arguements based on index value.
