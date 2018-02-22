@@ -82,6 +82,8 @@ print('The program can perform a variety of manipulations on the function.\n')
 print('Enter the corresponding number to run a specific option.\n')
 print('1 = Return the largest value.\n2 = Reverse the list.\n3 = Check if a specific value is in the list.')
 print('4 = Return the values in odd positions in the list\n5 = To print a total of the list.')
+print('6 = Return if the list is a palindrome.\n7 = Print the sum of the list using a recursion method')
+print('––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––')
 
 # Function 1 printing   only runs if list is only ints or floats
 if numberFlag:  # If the list contains numbers
