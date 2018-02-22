@@ -14,3 +14,7 @@ print(ans)              #   output error
 
 
 When calling functions enter the arguements based on index value.
+
+Functions start with a capital
+Variables start with a lowercase
+Functions should not call other built in functions
