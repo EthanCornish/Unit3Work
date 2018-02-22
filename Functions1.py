@@ -76,7 +76,12 @@ while (UI != ""):
         except ValueError:
             numberFlag = False
         list.append(UI)
-print('The list in its default state is: {0}'.format(list))
+print('The list in its default state is: {0}\n'.format(list))
+
+print('The program can perform a variety of manipulations on the function.\n')
+print('Enter the corresponding number to run a specific option.\n')
+print('1 = Return the largest value.\n2 = Reverse the list.\n3 = Check if a specific value is in the list.')
+print('4 = Return the values in odd positions in the list\n5 = To print a total of the list.')
 
 # Function 1 printing   only runs if list is only ints or floats
 if numberFlag:  # If the list contains numbers
