@@ -32,7 +32,7 @@ def Function4ReturnsElementsInOddPositions (list):
     dlist = []
     dlist = copy.copy(list)   # Creates a duplicate list that can be popped
     olist = []      # Creates a new list to store the values at odd positions
-    i = 1           # Creates a counter
+    i = 0           # Creates a counter
     while i < len(dlist):        # While the counter is less than the length of the list
         olist.append(dlist.pop(i))       # Add the value in the position of i in the list to the new list
         i += 1                          # Add 1 to the counter
@@ -82,49 +82,68 @@ print('The program can perform a variety of manipulations on the function.\n')
 print('Enter the corresponding number to run a specific option.\n')
 print('1 = Return the largest value.\n2 = Reverse the list.\n3 = Check if a specific value is in the list.')
 print('4 = Return the values in odd positions in the list\n5 = To print a total of the list.')
-print('6 = Return if the list is a palindrome.\n7 = Print the sum of the list using a recursion method')
-print('––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––')
-
-# Function 1 printing   only runs if list is only ints or floats
-if numberFlag:  # If the list contains numbers
-    valueToPrint = Function1ReturnLargest(list)     # Calling the function
-    print('The largest value entered is', valueToPrint)     # Print the value returned from the function
-
-# Function 2 printing
-listToPrint = Function2Reverse(list)        # Calling the function
-print('The list reversed is', listToPrint)  # Print the value returned from the function
-
-# Function 3 printing
-element = (input('What element would you like to check if it is in the list?'))
+print('6 = Return if the list is a palindrome.\n7 = Print the sum of the list using a recursion method.')
+print('0 = Exit the program.')
+print('––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n\n\n')
+run = input()
 try:
-    element = float(element)
-    run3 = True
+    run = int(run)
 except ValueError:
-    print('The element you entered is not a number.')
-if numberFlag:
-    elementToPrint = Function3ElementExistCheck(list, element)
-    if elementToPrint:
-        print(element, 'is in the list.')
+    print('You did not enter valid input')
+    exit(2)
+
+while run != 0:
+    if run == 1:
+        # Function 1 printing   only runs if list is only ints or floats
+        if numberFlag:  # If the list contains numbers
+            valueToPrint = Function1ReturnLargest(list)  # Calling the function
+            print('The largest value entered is', valueToPrint)  # Print the value returned from the function
+    elif run == 2:
+        # Function 2 printing
+        listToPrint = Function2Reverse(list)  # Calling the function
+        print('The list reversed is', listToPrint)  # Print the value returned from the function
+    elif run == 3:
+        # Function 3 printing
+        element = (input('What element would you like to check if it is in the list?'))
+        try:
+            element = float(element)
+            run3 = True
+        except ValueError:
+            print('The element you entered is not a number.')
+        if numberFlag:
+            elementToPrint = Function3ElementExistCheck(list, element)
+            if elementToPrint:
+                print(element, 'is in the list.')
+            else:
+                print(element, 'is not in the list')
+    elif run == 4:
+        # Function 4 printing
+        listToPrint = Function4ReturnsElementsInOddPositions(list)
+        print('The values in the list at odd positions are', listToPrint)
+    elif run == 5:
+        # Function 5 printing
+        if numberFlag:
+            valueToPrint = Function5RunningTotal(list)
+            print('The total of all the elements in the list is', valueToPrint)
+    elif run == 6:
+        # Function 6 printing
+        booleanToPrint = Function6PalindromeTest(list)
+        if booleanToPrint:
+            print(list, 'is a palindrome.')
+        else:
+            print(list, 'is not a palindrome')
+    elif run == 7:
+        # Function 7 printing
+        if numberFlag:
+            valueToPrint = Function7SumNumbersForLoop(list)
+            print('The sum of the list is', valueToPrint)
+    elif run == 0:
+        print('You have chosen to end the program.')
+        exit(1)
     else:
-        print(element, 'is not in the list')
+        print('Please enter a number ranging from 0-7 inclusive.')
+        run = input()
+    print('If you would like to operate further on your list enter another corresponding the input.')
+    print('If you would like to end the program enter 0')
+    run = int(input())
 
-# Function 4 printing
-listToPrint = Function4ReturnsElementsInOddPositions(list)
-print('The values in the list at odd positions are', listToPrint)
-
-# Function 5 printing
-if numberFlag:
-    valueToPrint = Function5RunningTotal(list)
-    print('The total of all the elements in the list is', valueToPrint)
-
-# Function 6 printing
-booleanToPrint = Function6PalindromeTest(list)
-if booleanToPrint:
-    print(list, 'is a palindrome.')
-else:
-    print(list, 'is not a palindrome')
-
-# Function 7 printing
-if numberFlag:
-    valueToPrint = Function7SumNumbersForLoop(list)
-    print('The sum of the list is', valueToPrint)
