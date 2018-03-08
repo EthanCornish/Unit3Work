@@ -1,5 +1,4 @@
 import math     # Allows the user to use math functions found on a scientific calculator
-import cmath
 
 i = 5
 
