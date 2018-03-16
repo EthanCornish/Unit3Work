@@ -28,7 +28,7 @@ def LoadContact():
         # Formatting the line in the file before appending
         line = line.strip('\n')
         line = line.split(",")
-        # Adding the first and last name to the names list as seperate entries
+        # Adding the first and last name to the names list as separate entries
         name.append(line[0])
         name.append(line[1])
         # Creating a second sub list to stor the date.
