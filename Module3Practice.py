@@ -107,6 +107,7 @@ def ChangeBirthday(r_contactsList):
         print(r_contactsList)
     return
 
+
 # Allows the user to remove a contact
 # r_contactsList is the main list to be read and updated
 def DeleteContact(r_contactsList):
